@@ -1,4 +1,6 @@
 import pygame
+import sys
+from logger import log_event
 from constants import SCREEN_HEIGHT, SCREEN_WIDTH
 from logger import log_state
 from player import Player
@@ -35,6 +37,11 @@ def main():
             shape.draw(screen)
         # player.update(dt)
         updatable.update(dt)
+        for asteroid in asteroids:
+            if asteroid.collides_with(player):
+                log_event("player_hit")
+                print("Game over!")
+                sys.exit()
         pygame.display.flip()
         delta_time = clock.tick(60)
         convert_to_secs = delta_time / 1000
