@@ -27,4 +27,5 @@ class Asteroid(CircleShape):
             second_asteroid = Asteroid(self.position.x, self.position.y, new_radisus_smaller_asteroid)
             first_asteroid.velocity = first_new_asteroid_movement * 1.2
             second_asteroid.velocity = second_new_asteroid_movement * 1.2
-        super().kill()
+        # super().kill()
+        self.kill()
