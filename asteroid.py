@@ -17,7 +17,6 @@ class Asteroid(CircleShape):
 
     def split(self):
         if self.radius > ASTEROID_MIN_RADIUS:
-        
             log_event("asteroid_split")
             # Create two smaller asteroids
             random_angle = random.uniform(20, 50)
